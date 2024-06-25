@@ -9,5 +9,5 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5001
 
-# Run main.py when the container launches
+# Run main.py when the container launches forreal
 CMD ["python", "main.py"]
