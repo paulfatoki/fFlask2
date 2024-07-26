@@ -5,15 +5,15 @@ pipeline{
             steps {
                 script {
  
-                    git branch: 'main', url: 'https://github.com/clement2019/python_flask_app.git' 
+                    git branch: 'master', url: 'https://github.com/clement2019/Flask.git' 
                 }
             }
         }
-        stage("Build docker on going"){
+        stage("Build docker connecting....."){
             steps{
                 sh 'printenv'
                 sh 'git version'
-                sh 'docker build . -t good777lord/imag2.0'
+                sh 'docker build . -t good777lord/f-app1.0'
             }
         }
          stage("push image to DockerHub"){
@@ -24,7 +24,7 @@ pipeline{
                  withCredentials([string(credentialsId: 'DockerID', variable: 'DockerID')]) {
                     sh 'docker login -u good777lord -p ${DockerID}'
             }
-              sh 'docker push good777lord/imag2.0:latest'
+              sh 'docker push good777lord/f-app1.0:latest'
             }
         }
     }

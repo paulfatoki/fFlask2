@@ -15,9 +15,10 @@ def result():
         return render_template("result.html", result=result)
 
 
+  # return render_template("registrationform.html")
 # main driver function
 if __name__ == '__main__':
     # run() method of Flask class runs the application
     # on the local development server.
-    # app.run(debug=True, port=5001)
+    # app.run(debug=True, port=5002)
     app.run(host='0.0.0.0', port=5002)
