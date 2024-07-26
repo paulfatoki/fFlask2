@@ -1,4 +1,4 @@
-FROM python:3.8-slim
+FROM python:alpine
 
 WORKDIR /usr/app
 
@@ -7,7 +7,7 @@ COPY templates templates/
 COPY requirements.txt ./
 
 RUN pip install --no-cache-dir -r requirements.txt
-EXPOSE 5001
+EXPOSE 5002
 
 # Run main.py when the container launches forreal
 CMD ["python", "main.py"]
